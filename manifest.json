@@ -1,0 +1,26 @@
+{
+    "author": "CC",
+    "description": "Pubmed Project 1",
+    "icons": {
+        "48": "src/icons/favicon.png",
+        "96": "src/icons/favicon.png"
+    },
+    "manifest_version": 3,
+    "name": "myEdgeExt-Pubmed",
+    "version": "1.0",
+    "permissions": ["tabs"],
+    "action": {
+        "default_icon": {
+            "30": "src/icons/favicon.png"
+        },
+        "default_title": "myPubmedExt",
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["https://pubmed.ncbi.nlm.nih.gov/?term*"],
+            "js": ["src/js/d3.min.js", "src/js/jquery-3.6.1.min.js", "addon.js"]
+        }
+    ]
+}
